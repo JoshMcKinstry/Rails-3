@@ -6,43 +6,43 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get cars_url
+    get cars_path
     assert_response :success
   end
 
   test "should get new" do
-    get new_car_url
+    get new_car_path
     assert_response :success
   end
 
   test "should create car" do
     assert_difference('Car.count') do
-      post cars_url, params: { car: { model: @car.model, vin: @car.vin } }
+      post cars_path, params: { car: { model: @car.model, vin: @car.vin, make_id: @car.make_id} }
     end
 
-    assert_redirected_to car_url(Car.last)
+    assert_redirected_to car_path(Car.last)
   end
 
   test "should show car" do
-    get car_url(@car)
+    get car_path(@car)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_car_url(@car)
+    get edit_car_path(@car)
     assert_response :success
   end
 
   test "should update car" do
-    patch car_url(@car), params: { car: { model: @car.model, vin: @car.vin } }
-    assert_redirected_to car_url(@car)
+    patch car_path(@car), params: { car: { model: @car.model, vin: @car.vin, make_id: @car.make_id} }
+    assert_redirected_to car_path(@car)
   end
 
   test "should destroy car" do
     assert_difference('Car.count', -1) do
-      delete car_url(@car)
+      delete car_path(@car)
     end
 
-    assert_redirected_to cars_url
+    assert_redirected_to cars_path
   end
 end
