@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :make %>
+    <%= form.collection_select :make_id, Make.all, :id, :name %>
+  </div>
+
+  <div class="field">
     <%= form.label :model %>
     <%= form.text_field :model %>
   </div>
