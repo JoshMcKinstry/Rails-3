@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_224848) do
+ActiveRecord::Schema.define(version: 2020_07_28_225430) do
 
   create_table "cars", force: :cascade do |t|
     t.string "model"
     t.integer "vin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "make_id"
+    t.index ["make_id"], name: "index_cars_on_make_id"
   end
 
   create_table "makes", force: :cascade do |t|
