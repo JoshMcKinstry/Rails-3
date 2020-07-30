@@ -3,9 +3,11 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
+    @parts = Part.all
   end
 
   def show
+    
   end
 
   def new
@@ -55,6 +57,6 @@ class CarsController < ApplicationController
     end
 
     def car_params
-      params.require(:car).permit(:model, :vin, :make_id)
+      params.require(:car).permit(:model, :vin, :make_id, :part_ids => [])
     end
 end
