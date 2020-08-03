@@ -3,9 +3,31 @@
 one:
   make: one
   model: MyString
-  vin: 1
+  vin: 3333CCCC4444DDDD5
 
 two:
   make: two
   model: MyString
-  vin: 1
+  vin: 4444DDDD5555EEEE6
+
+novin:
+  make: one
+  model: Model
+
+nomake:
+  model: Model
+  vin: 1111AAAA2222BBBB3
+
+nomodel:
+  make: one
+  vin: 2222BBBB3333CCCC4
+
+tooshort:
+  make: one
+  model: Model
+  vin: 1011
+
+toolong:
+  make: one
+  model: Model
+  vin: 111122223333444455
