@@ -27,3 +27,13 @@ toolong:
   make: one
   model: Model
   vin: 1A2B3C4D5E6
+
+tooshort:
+  make: one
+  model: A
+  vin: E5D4C3B2A1
+  
+toolong2:
+  make: one
+  model: ModelNameIsWayTooLong
+  vin: 1A2B3C4D5E
