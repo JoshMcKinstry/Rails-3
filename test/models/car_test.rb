@@ -58,6 +58,9 @@ class CarTest < ActiveSupport::TestCase
     assert_includes c.errors[:vin], "has already been taken"
   end
 
+  test "unique VIN is valid" do
+  end
+
   test "model too short" do
     c = Car.create(make: @make, model: "A", vin: "33CC44DD55")
     assert c.invalid?, "Model length should be invalid, should be less than 2"
