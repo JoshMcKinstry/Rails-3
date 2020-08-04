@@ -9,31 +9,3 @@ two:
   make: two
   model: MyString
   vin: 22BB33CC44
-
-novin:
-  make: one
-  model: Model
-
-nomodel:
-  make: one
-  vin: 44DD55EE66
-
-tooshort:
-  make: one
-  model: Model
-  vin: 123ABC
-
-toolong:
-  make: one
-  model: Model
-  vin: 1A2B3C4D5E6
-
-tooshort:
-  make: one
-  model: A
-  vin: E5D4C3B2A1
-  
-toolong2:
-  make: one
-  model: ModelNameIsWayTooLong
-  vin: 1A2B3C4D5E
