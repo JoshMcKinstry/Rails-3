@@ -2,10 +2,10 @@
 
 one:
   make: one
-  model: MyString
+  model: Sienna
   vin: 11AA22BB33
 
 two:
   make: two
-  model: MyString
+  model: Mustang
   vin: 22BB33CC44

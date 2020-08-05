@@ -42,7 +42,38 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Car.count', -1) do
       delete car_path(@car)
     end
-
+    
     assert_redirected_to cars_path
   end
+
+  test "searches return 200" do
+    get search_cars_path, params: {search: "Mustang"}
+    assert_response 200
+  end
+
+  test "should find by make names" do
+    get search_cars_path, params: {search: "Ford"}
+    assert_select 'td', 'Ford'
+  end
+
+  test "should find by make countries" do
+    get search_cars_path, params: {search: "Japan"}
+    assert_select 'td', 'Toyota'
+  end
+
+  test "should find by model" do
+    get search_cars_path, params: {search: "Mustang"}
+    assert_select 'td', 'Ford'
+  end
+
+  test "should find by VIN" do
+    get search_cars_path, params: {search: "11AA22BB33"}
+    assert_select 'td', 'Toyota'
+  end
+
+  test "should not find Bogus" do
+    get search_cars_path, params: {search: "Bogus"}
+    assert_select 'td', false
+  end
+    
 end
