@@ -51,6 +51,11 @@ class CarsController < ApplicationController
     end
   end
 
+  def search
+    @cars = Car.joins(:make).where("model LIKE ?", "%#{params[:query]}")
+    render :index
+  end
+
   private
     def set_car
       @car = Car.find(params[:id])
