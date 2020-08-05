@@ -52,8 +52,8 @@ class CarsController < ApplicationController
   end
 
   def search
-    @cars = Car.joins(:make).where("model LIKE ? OR makes.name LIKE ? OR makes.country LIKE ?",
-      "%#{params[:query]}", "%#{params[:query]}", "%#{params[:query]}")
+    @cars = Car.joins(:make).where("makes.name LIKE ? OR makes.country LIKE ? OR model LIKE ? OR vin LIKE ?",
+      "%#{params[:query]}", "%#{params[:query]}", "%#{params[:query]}", "%#{params[:query]}")
     render :index
   end
 
