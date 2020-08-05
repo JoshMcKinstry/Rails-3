@@ -47,32 +47,33 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "searches return 200" do
-    get search_cars_path, params: {search: "Mustang"}
+    get search_cars_path, params: {query: "Mustang"}
     assert_response 200
   end
 
   test "should find by make names" do
-    get search_cars_path, params: {search: "Ford"}
+    get search_cars_path, params: {query: "Ford"}
     assert_select 'td', 'Ford'
   end
 
   test "should find by make countries" do
-    get search_cars_path, params: {search: "Japan"}
+    get search_cars_path, params: {query: "Japan"}
     assert_select 'td', 'Toyota'
   end
 
   test "should find by model" do
-    get search_cars_path, params: {search: "Mustang"}
+    get search_cars_path, params: {query: "Mustang"}
     assert_select 'td', 'Ford'
   end
 
   test "should find by VIN" do
-    get search_cars_path, params: {search: "11AA22BB33"}
+    get search_cars_path, params: {query: "11AA22BB33"}
     assert_select 'td', 'Toyota'
   end
 
   test "should not find Bogus" do
-    get search_cars_path, params: {search: "Bogus"}
+    get search_cars_path, params: {query: "Bogus"}
+    puts @controller.instance_variable_get(:@cars)
     assert_select 'td', false
   end
     
