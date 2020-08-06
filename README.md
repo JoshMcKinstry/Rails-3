@@ -1,12 +1,28 @@
-# Rails-1
+# Rails-2
 
 A starter rails app, for CS3710 Assignment 1.
 
-### Assignment Details
+## Assignment Details
 
-A car part has a name and belongs to many cars. A car make has a name and country. Cars have make and model names, VIN numbers and many parts. Need to create a CarParts model or scaffold. In the form for a car have a drop down with a list of possible parts to be added.
+#### Assignment-1
 
-### Product Details
+A car part has a name and belongs to many cars.
+
+A car make has a name and country.
+
+Cars have make and model names, VIN numbers and many parts.
+
+Need to create a CarParts model or scaffold.
+
+In the form for a car have a drop down with a list of possible parts to be added.
+
+#### Assignment-2
+
+Requires that all models be validated and that searching be added for each index function.
+
+Unit test all code.
+
+## Product Details
 
 ##### Ruby Version
 
@@ -18,7 +34,7 @@ A car part has a name and belongs to many cars. A car make has a name and countr
 
 ### Install
 
-Clone this repository to have access. Before running any code, make sure you run the following on the terminal.
+Clone this repository to have access. Before running any code, make sure you have the correct ruby and rails versions and run the following on the terminal.
 
     bundle install
 
@@ -28,19 +44,11 @@ To start up the server, go to the terminal, navigate to the Rails-1 directory an
 
     rails server
 
---- or ---
-
-    rails s
-
 On your browser, navigate to localhost:3000/cars
 
-I have built this app so that currently, the only views in the app are related to cars. There are no routes and no controller for part or make. In order to create new parts or makes, use the rails console.
+Currently, the only views in the app are related to cars. There are no routes and no controller for parts or makes. In order to create new parts or makes, use the rails console.
 
     rails console
-
---- or ---
-
-    rails c
 
 This will start up the console. Once here, use the method create for either object to create new parts or makes.
 
