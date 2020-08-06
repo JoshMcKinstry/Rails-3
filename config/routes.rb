@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'cars#index'
+
   resources :cars do
     collection do
       get 'search'
