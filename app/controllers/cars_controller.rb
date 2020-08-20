@@ -3,7 +3,6 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
-    @parts = Part.all
   end
 
   def show
