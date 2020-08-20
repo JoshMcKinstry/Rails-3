@@ -8,33 +8,32 @@
   <%= submit_tag("Search") %>​
 <% end %>
 
-<table>
+<table class=cars>
   <thead>
     <tr>
-      <th>Make</th>
-      <th>Model</th>
-      <th>Vin</th>
-      <th colspan="20"></th>
+      <th class=make>Make</th>
+      <th class=model>Model</th>
+      <th class=vin>Vin</th>
+      <th class=parts>Parts</th>
+      <th class=options colspan=3>Options</th>
     </tr>
   </thead>
 
   <tbody>
     <% @cars.each do |car| %>
-      <tr>
-        <td><%= car.make.name %></td>
-        <td><%= car.model %></td>
-        <td><%= car.vin %></td>
-        <td><%= link_to 'Show', car %></td>
-        <td><%= link_to 'Edit', edit_car_path(car) %></td>
-        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <tr>
-          <td>Vehicle Parts: </td>
-          <td><% car.parts.each do |part| %>
-            <td><%= part.name %></td>
-          <% end %></td>
+        <tr class="<%= cycle("odd", "even") -%>">
+          <td class=make><%= car.make.name %></td>
+          <td class=model><%= car.model %></td>
+          <td class=vin><%= car.vin %></td>
+          <% parts = "" %>
+          <% car.parts.each do |part| %>
+            <% parts << '[' << part.name << ']' %>
+          <% end %>
+          <td class=parts><%= parts %></td>
+          <td><%= link_to 'Show', car %></td>
+          <td><%= link_to 'Edit', edit_car_path(car) %></td>
+          <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
-      </tr>
-      
     <% end %>
   </tbody>
 </table>
