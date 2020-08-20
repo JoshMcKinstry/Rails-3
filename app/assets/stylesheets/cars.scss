@@ -1,3 +1,30 @@
 // Place all the styles related to the Cars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+  width: 1000px;
+}
+
+/* Table Heads
+    Make    Model    VIN    Parts    Options */
+
+th,
+td {
+  padding: 7px, 7px, 10px, 10px, 7px;
+  max-width: 25px;
+}
+
+.parts {
+  min-width: 20px;
+  max-width: 40px;
+}
+
+th {
+  border-top: 1px solid #999;
+  border-bottom: 2px solid #111111;
+}
+
+tr.odd {
+  background-color: #efefef;
+}
